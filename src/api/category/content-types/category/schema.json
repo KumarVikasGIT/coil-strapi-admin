@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "categoryName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 15,
+      "unique": true
+    },
+    "categoryDescription": {
+      "type": "text",
+      "maxLength": 150
+    },
+    "wallpapers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::wallpaper.wallpaper",
+      "mappedBy": "category"
+    },
+    "categoryImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "categoryId": {
+      "type": "uid",
+      "targetField": "categoryName",
+      "required": true
+    },
+    "sub_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sub-category.sub-category"
+    }
+  }
+}

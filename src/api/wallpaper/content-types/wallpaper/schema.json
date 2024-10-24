@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wallpapers",
+  "info": {
+    "singularName": "wallpaper",
+    "pluralName": "wallpapers",
+    "displayName": "Wallpaper",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "wallpaperTitle": {
+      "type": "string",
+      "required": true,
+      "maxLength": 15
+    },
+    "wallpaperDescription": {
+      "type": "text",
+      "maxLength": 150
+    },
+    "wallpaperImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "wallpaperStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Public",
+        "Private",
+        "Draft"
+      ]
+    },
+    "wallpaperId": {
+      "type": "uid",
+      "targetField": "wallpaperTitle",
+      "required": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "wallpapers"
+    },
+    "sub_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sub-category.sub-category",
+      "inversedBy": "wallpapers"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "wallpapers"
+    }
+  }
+}
