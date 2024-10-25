@@ -385,8 +385,6 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 150;
       }>;
-    categoryId: Schema.Attribute.UID<'categoryName'> &
-      Schema.Attribute.Required;
     categoryImage: Schema.Attribute.Media<'images'>;
     categoryName: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -430,6 +428,7 @@ export interface ApiSubCategorySubCategory extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -445,7 +444,6 @@ export interface ApiSubCategorySubCategory extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 150;
       }>;
-    subCategoryId: Schema.Attribute.UID<'subCategoryName'>;
     subCategoryName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
@@ -532,8 +530,6 @@ export interface ApiWallpaperWallpaper extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 150;
       }>;
-    wallpaperId: Schema.Attribute.UID<'wallpaperTitle'> &
-      Schema.Attribute.Required;
     wallpaperImage: Schema.Attribute.Media<'images'> &
       Schema.Attribute.Required;
     wallpaperStatus: Schema.Attribute.Enumeration<

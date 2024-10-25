@@ -37,11 +37,6 @@
         "Draft"
       ]
     },
-    "wallpaperId": {
-      "type": "uid",
-      "targetField": "wallpaperTitle",
-      "required": true
-    },
     "category": {
       "type": "relation",
       "relation": "manyToOne",

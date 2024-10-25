@@ -23,15 +23,17 @@
       "required": true,
       "maxLength": 150
     },
-    "subCategoryId": {
-      "type": "uid",
-      "targetField": "subCategoryName"
-    },
     "wallpapers": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::wallpaper.wallpaper",
       "mappedBy": "sub_category"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "sub_categories"
     }
   }
 }
