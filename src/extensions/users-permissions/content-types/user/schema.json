@@ -70,6 +70,14 @@
       "relation": "oneToMany",
       "target": "api::wallpaper.wallpaper",
       "mappedBy": "user"
+    },
+    "fullName": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "about": {
+      "type": "text",
+      "maxLength": 500
     }
   }
 }

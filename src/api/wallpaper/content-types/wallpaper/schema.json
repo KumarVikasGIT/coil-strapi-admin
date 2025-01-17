@@ -49,17 +49,15 @@
       "target": "api::sub-category.sub-category",
       "inversedBy": "wallpapers"
     },
-    "tags": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::tag.tag",
-      "inversedBy": "wallpapers"
-    },
     "user": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "wallpapers"
+    },
+    "wallpaperTags": {
+      "type": "text",
+      "maxLength": 500
     }
   }
 }
