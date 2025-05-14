@@ -15,11 +15,11 @@
     "wallpaperTitle": {
       "type": "string",
       "required": true,
-      "maxLength": 15
+      "maxLength": 100
     },
     "wallpaperDescription": {
       "type": "text",
-      "maxLength": 150
+      "maxLength": 250
     },
     "wallpaperImage": {
       "type": "media",

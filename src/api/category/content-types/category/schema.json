@@ -15,12 +15,12 @@
     "categoryName": {
       "type": "string",
       "required": true,
-      "maxLength": 15,
+      "maxLength": 100,
       "unique": true
     },
     "categoryDescription": {
       "type": "text",
-      "maxLength": 150
+      "maxLength": 250
     },
     "wallpapers": {
       "type": "relation",

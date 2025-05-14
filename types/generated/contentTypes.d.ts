@@ -383,14 +383,14 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   attributes: {
     categoryDescription: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 150;
+        maxLength: 250;
       }>;
     categoryImage: Schema.Attribute.Media<'images'>;
     categoryName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 15;
+        maxLength: 100;
       }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -442,13 +442,13 @@ export interface ApiSubCategorySubCategory extends Struct.CollectionTypeSchema {
     subCategoryDescription: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 150;
+        maxLength: 250;
       }>;
     subCategoryName: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 150;
+        maxLength: 100;
       }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -526,7 +526,7 @@ export interface ApiWallpaperWallpaper extends Struct.CollectionTypeSchema {
     >;
     wallpaperDescription: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 150;
+        maxLength: 250;
       }>;
     wallpaperImage: Schema.Attribute.Media<'images'> &
       Schema.Attribute.Required;
@@ -540,7 +540,7 @@ export interface ApiWallpaperWallpaper extends Struct.CollectionTypeSchema {
     wallpaperTitle: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 15;
+        maxLength: 100;
       }>;
   };
 }
