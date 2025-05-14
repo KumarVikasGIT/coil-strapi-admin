@@ -15,7 +15,15 @@ module.exports = [
     },
   },
   "strapi::errors",
-  "strapi::cors",
+  {
+    name: 'strapi::cors',
+    config: {
+      enabled: true,
+      headers: '*',
+      origin: '*',
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"]
+    }
+  },
   "strapi::poweredBy",
   "strapi::query",
   "strapi::body",
